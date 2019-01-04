@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import "./scss/flexible.js";
 export default {
   name   : "app",
   methods: {

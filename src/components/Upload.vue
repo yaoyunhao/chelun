@@ -1,16 +1,16 @@
 <template>
   <div class="wrap">
-    <header>
+    <header class="Upheader">
       <i class="iconfont icon-xiangzuo"></i>
       <span>补换驾照</span>
       <i class="iconfont icon-gengduo"></i>
     </header>
     <div class="title">
       <span
-          v-for  = "(val,ind) in titleArr"
-        :key     = "ind"
-        :class   = "defaultIndex==ind ? 'active' : null "
-          @click = "changeInd(ind)"
+              v-for  = "(val,ind) in titleArr"
+            :key     = "ind"
+            :class   = "defaultIndex==ind ? 'active' : null "
+              @click = "changeInd(ind)"
       >{{val}}</span>
     </div>
     <div class="title1">
@@ -33,14 +33,17 @@
       <span>优惠</span>
       <span>登陆后查看优惠卷</span>
     </div>
+    <div class="title5">
+      <router-link to="/ccwt">常见问题</router-link>
+    </div>
     <div class="popup">
       <van-popup v-model="show" position="bottom">
         <van-picker
           show-toolbar
-            title    = "服务类型"
-          :columns   = "columns"
-            @cancel  = "cancelType"
-            @confirm = "confirmType"
+                title    = "服务类型"
+              :columns   = "columns"
+                @cancel  = "cancelType"
+                @confirm = "confirmType"
         />
       </van-popup>
       <van-popup v-model="showType">
@@ -49,8 +52,8 @@
       </van-popup>
       <van-popup v-model="showCity" position="bottom">
         <van-picker
-            title  = "当前签发城市"
-          :columns = "cityColumns"
+                title  = "当前签发城市"
+              :columns = "cityColumns"
           show-toolbar
           ref      = "cityPicker"
           @change  = "cityChange"
@@ -60,9 +63,9 @@
       </van-popup>
       <van-popup v-model="showCost" position="bottom">
         <van-picker
-            title  = "可补换城市"
-          :columns = "costColumns"
-            ref    = "costPicker"
+                title  = "可补换城市"
+              :columns = "costColumns"
+                ref    = "costPicker"
           show-toolbar
           @change  = "costChange"
           @cancel  = "costCancel"

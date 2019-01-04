@@ -1,0 +1,140 @@
+@import "common.scss";
+@import "_mixin.scss";
+//移动端
+.wrap {
+    @include num(100%, 100%);
+    overflow-y: auto;
+}
+
+.m-header {
+    @include num(100%, rem(40px));
+    @include flexs;
+    padding: 0 rem(40px);
+    @include sizing;
+    .headerImg {
+        @include num(19%, 100%);
+    }
+    img {
+        @include num(10%, 100%)
+    }
+}
+
+.m-section {
+    @include num(100%, auto);
+    .m-banner {
+        @include num(100%, auto);
+        img {
+            @include num(100%, rem(300px));
+        }
+    }
+    .m-sectionTop {
+        @include num(100%, rem(44px));
+        border-bottom: 1px solid #ccc;
+        .m-sectionTopUl {
+            @include num(100%, auto);
+            @include flexs;
+            padding: 0 rem(30px);
+            @include sizing;
+            justify-content: space-around;
+            font-size: rem(14px);
+            line-height: rem(44px);
+            color: #ccc;
+            li {
+                height: rem(43px);
+                &:hover {
+                    cursor: pointer;
+                    color: #000;
+                    border-bottom: rem(2px) solid skyblue;
+                }
+            }
+            .liActive {
+                color: #000;
+                border-bottom: rem(2px) solid skyblue;
+            }
+        }
+    }
+}
+
+.header {
+    display: none;
+}
+
+.b-section {
+    display: none;
+}
+
+//PC端
+@media screen and (min-width: 1000px) {
+    .m-header {
+        display: none;
+    }
+    .m-section {
+        display: none;
+    }
+    .wrap {
+        @include num(100%, 100%);
+        overflow-y: auto;
+    }
+    .header {
+        @include num(100%, rem(80px));
+        background: #6487F9;
+        display: flex;
+        padding: 0 rem(180px);
+        align-items: center;
+        img {
+            @include num(9%, auto);
+        }
+        .headerUl {
+            @include num(40%, auto);
+            @include flexs;
+            margin-left: rem(80px);
+            li {
+                font-size: rem(12px);
+                text-align: center;
+                padding-bottom: rem(5px);
+                @include sizing;
+                &:hover {
+                    border-bottom: rem(2px) solid skyblue;
+                }
+                &:nth-of-type(7) {
+                    font-size: rem(10px);
+                }
+            }
+        }
+    }
+    .b-section {
+        @include flexs;
+        flex-direction: column;
+        flex: 1;
+        .banner {
+            @include num(100%, rem(420px));
+            img {
+                @include num(100%, 100%);
+            }
+        }
+        .sectionTop {
+            @include num(100%, rem(44px));
+            border-bottom: 1px solid #ccc;
+            .sectionTopUl {
+                padding: 0 rem(150px);
+                @include num(30%, auto);
+                @include flexs;
+                line-height: rem(44px);
+                font-size: rem(12px);
+                color: #ccc;
+                li {
+                    height: rem(43px);
+                    &:hover {
+                        cursor: pointer;
+                        color: #000;
+                        border-bottom: rem(2px) solid skyblue;
+                    }
+                }
+                .liActive {
+                    color: #000;
+                    border-bottom: rem(2px) solid skyblue;
+                }
+            }
+        }
+    }
+}
