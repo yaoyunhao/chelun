@@ -1,0 +1,75 @@
+@import "common.scss";
+@import "_mixin.scss";
+.wrap {
+    @include num(100%, 100%);
+    @include box_flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+header {
+    @include num(100%, rem(44px));
+    @include flexs;
+    padding: 0 rem(10px);
+    @include sizing;
+}
+
+.title {
+    @include num(100%, rem(44px));
+    @include flexs;
+    span {
+        @include num(25%, 100%);
+        text-align: center;
+        line-height: rem(44px);
+    }
+}
+
+.active {
+    color: #fff;
+    background: skyblue;
+}
+
+.title1 {
+    @include num(100%, auto);
+    img {
+        @include num(100%, auto);
+    }
+}
+
+.title2 {
+    @include num(100%, auto);
+    @include flexs;
+    padding: rem(10px);
+    @include sizing;
+    margin-top: rem(5px);
+    p {
+        @include flexs;
+        flex-direction: column;
+        img {
+            @include num(rem(30px), rem(30px));
+        }
+        span {
+            line-height: 2;
+        }
+    }
+}
+
+.title3 {
+    @include num(100%, auto);
+    border-bottom: 15px solid #ccc;
+    border-top: 15px solid #ccc;
+    p {
+        @include num(100%, rem(40px));
+        @include flexs;
+        padding: 0 rem(10px);
+        @include sizing;
+        border-bottom: 1px solid #ccc;
+    }
+}
+
+.title4 {
+    @include num(100%, rem(40px));
+    @include flexs;
+    padding: 0 rem(10px);
+    @include sizing;
+}
