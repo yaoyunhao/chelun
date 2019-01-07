@@ -78,3 +78,13 @@
     @include num(100%, auto);
     text-align: center;
 }
+
+.title6 {
+    @include num(100%, auto);
+    button {
+        @include num(30%, auto);
+        background: #ccc;
+        border: 0;
+        float: right;
+    }
+}

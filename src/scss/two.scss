@@ -1,0 +1,82 @@
+@import "common.scss";
+@import "_mixin.scss";
+.twoTitle {
+    @include num(100%, rem(30px));
+    background: #eee;
+    text-align: center;
+    line-height: rem(30px);
+}
+
+.twoTitle1 {
+    @include num(100%, rem(40px));
+    @include flexs;
+    padding: 0 rem(10px);
+    @include sizing;
+    border-bottom: 1px solid #ccc;
+    p {
+        flex: 1;
+        @include flexs;
+        margin-left: rem(50px);
+    }
+}
+
+.buttons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    @include num(100%, rem(40px));
+    text-align: center;
+    line-height: rem(40px);
+    background: #777;
+    color: #fff;
+    border: 0;
+}
+
+.hongbao {
+    position: fixed;
+    bottom: rem(130px);
+    right: rem(10px);
+}
+
+#cc {
+    position: fixed;
+    bottom: rem(50px);
+    right: rem(10px);
+}
+
+.twoMask {
+    @include num(100%, 100%);
+    background: rgba(0, 0, 0, .7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    .maskBox {
+        background: #fff;
+        margin: 50% auto;
+        @include num(80%, auto);
+        padding-bottom: rem(10px);
+        img {
+            @include num(100%, auto);
+            border-radius: rem(15px);
+        }
+        .twoButtons {
+            @include flexs;
+            padding: 0 rem(10px);
+            @include sizing;
+            button {
+                @include num(50%, rem(40px));
+                border: 0;
+                border-radius: rem(5px);
+                margin-left: rem(10px);
+                color: #fff;
+                font-size: rem(16px);
+                &:nth-child(1) {
+                    background: #eee;
+                }
+                &:nth-child(2) {
+                    background: skyblue;
+                }
+            }
+        }
+    }
+}

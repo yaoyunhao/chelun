@@ -183,110 +183,15 @@ html {
   font-size: 37.5px;
 }
 
-.wrap {
+.twoTitle {
   width: 100%;
-  height: 100%;
-  display: flex;
-  display: -webkit-flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.Upheader {
-  width: 100%;
-  height: 1.17333rem;
-  display: flex;
-  display: -webkit-flex;
-  justify-content: space-between;
-  -webkit-justify-content: space-between;
-  align-items: center;
-  -webkit-align-items: center;
-  padding: 0 0.26667rem;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.title {
-  width: 100%;
-  height: 1.17333rem;
-  display: flex;
-  display: -webkit-flex;
-  justify-content: space-between;
-  -webkit-justify-content: space-between;
-  align-items: center;
-  -webkit-align-items: center;
-}
-
-.title span {
-  width: 25%;
-  height: 100%;
-  text-align: center;
-  line-height: 1.17333rem;
-}
-
-.active {
-  color: #fff;
-  background: skyblue;
-}
-
-.title1 {
-  width: 100%;
-  height: auto;
-}
-
-.title1 img {
-  width: 100%;
-  height: auto;
-}
-
-.title2 {
-  width: 100%;
-  height: auto;
-  display: flex;
-  display: -webkit-flex;
-  justify-content: space-between;
-  -webkit-justify-content: space-between;
-  align-items: center;
-  -webkit-align-items: center;
-  padding: 0.26667rem;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-  margin-top: 0.13333rem;
-}
-
-.title2 p {
-  display: flex;
-  display: -webkit-flex;
-  justify-content: space-between;
-  -webkit-justify-content: space-between;
-  align-items: center;
-  -webkit-align-items: center;
-  flex-direction: column;
-}
-
-.title2 p img {
-  width: 0.8rem;
   height: 0.8rem;
+  background: #eee;
+  text-align: center;
+  line-height: 0.8rem;
 }
 
-.title2 p span {
-  line-height: 2;
-}
-
-.title3 {
-  width: 100%;
-  height: auto;
-  border-bottom: 15px solid #ccc;
-  border-top: 15px solid #ccc;
-}
-
-.title3 p {
+.twoTitle1 {
   width: 100%;
   height: 1.06667rem;
   display: flex;
@@ -304,9 +209,66 @@ html {
   border-bottom: 1px solid #ccc;
 }
 
-.title4 {
+.twoTitle1 p {
+  flex: 1;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
+  align-items: center;
+  -webkit-align-items: center;
+  margin-left: 1.33333rem;
+}
+
+.buttons {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 1.06667rem;
+  text-align: center;
+  line-height: 1.06667rem;
+  background: #777;
+  color: #fff;
+  border: 0;
+}
+
+.hongbao {
+  position: fixed;
+  bottom: 3.46667rem;
+  right: 0.26667rem;
+}
+
+#cc {
+  position: fixed;
+  bottom: 1.33333rem;
+  right: 0.26667rem;
+}
+
+.twoMask {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.twoMask .maskBox {
+  background: #fff;
+  margin: 50% auto;
+  width: 80%;
+  height: auto;
+  padding-bottom: 0.26667rem;
+}
+
+.twoMask .maskBox img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.4rem;
+}
+
+.twoMask .maskBox .twoButtons {
   display: flex;
   display: -webkit-flex;
   justify-content: space-between;
@@ -321,21 +283,20 @@ html {
   box-sizing: border-box;
 }
 
-.title5 {
-  width: 100%;
-  height: auto;
-  text-align: center;
-}
-
-.title6 {
-  width: 100%;
-  height: auto;
-}
-
-.title6 button {
-  width: 30%;
-  height: auto;
-  background: #ccc;
+.twoMask .maskBox .twoButtons button {
+  width: 50%;
+  height: 1.06667rem;
   border: 0;
-  float: right;
+  border-radius: 0.13333rem;
+  margin-left: 0.26667rem;
+  color: #fff;
+  font-size: 0.42667rem;
+}
+
+.twoMask .maskBox .twoButtons button:nth-child(1) {
+  background: #eee;
+}
+
+.twoMask .maskBox .twoButtons button:nth-child(2) {
+  background: skyblue;
 }

@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
-
 import router from '@/router/index';
-
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts;
 import store from '@/store/index';
-import {Popup,Picker} from 'vant';
+import { Popup, Picker } from 'vant';
 Vue.use(Popup);
 Vue.use(Picker);
 new Vue({
