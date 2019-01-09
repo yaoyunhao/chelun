@@ -1,77 +1,77 @@
 <template>
-    <div>
-        <div class="title1">
-            <img src="../static/img/1.png" alt="">
-        </div>
-        <div class="title2">
-            <p v-for="(val,ind) in list" :key="ind" @click="click(val)">
-                <img v-if="val.src" :src="val.src" alt="">
-                <img v-else :src="addImg" alt="">
-                <span>{{val.desc}}</span>
-            </p>
-        </div>
-        <div class="title3">
-            <p v-for="(val,ind) in listArr" :key="ind" @click="changeJz(val.left)">
-                <span @click="showTypes">{{val.left}} {{val.center}}</span>
-                <span @click="clickRight(val.right)">{{val.right}}</span>
-            </p>
-        </div>
-        <div class="title4">
-            <span>优惠</span>
-            <span>登陆后查看优惠卷</span>
-        </div>
-        <div class="title5">
-            <router-link to="/ccwt">常见问题</router-link>
-        </div>
-        <div class="title6">
-            <button @click="pay">去支付</button>
-        </div>
-        <div class="popup">
-            <van-popup v-model="show" position="bottom">
-                <van-picker
-                    show-toolbar
-                                        title    = "服务类型"
-                                      :columns   = "columns"
-                                        @cancel  = "cancelType"
-                                        @confirm = "confirmType"
-                />
-            </van-popup>
-            <van-popup v-model="showType">
-                <img src="../assets/licence.png">
-                <span>不同签发城市价格不同,车轮保证全国通用.</span>
-            </van-popup>
-            <van-popup v-model="showCity" position="bottom">
-                <van-picker
-                                        title  = "当前签发城市"
-                                      :columns = "cityColumns"
-                    show-toolbar
-                    ref      = "cityPicker"
-                    @change  = "cityChange"
-                    @cancel  = "cityCancel"
-                    @confirm = "cityConfirm"
-                />
-            </van-popup>
-            <van-popup v-model="showCost" position="bottom">
-                <van-picker
-                                        title  = "可补换城市"
-                                      :columns = "costColumns"
-                                        ref    = "costPicker"
-                    show-toolbar
-                    @change  = "costChange"
-                    @cancel  = "costCancel"
-                    @confirm = "costConfirm"
-                />
-            </van-popup>
-        </div>
-        <section v-show="showMask" class="mask">
-            <img :src="current.demo">
-            <div>
-                <button @click="upload(1)">拍照</button>
-                <button @click="upload(2)">相册</button>
-                <button @click="cancel">取消</button>
-            </div>
-        </section>
+  <div>
+    <div class="title1">
+      <img src="../static/img/1.png" alt="">
     </div>
+    <div class="title2">
+      <p v-for="(val,ind) in list" :key="ind" @click="click(val)">
+        <img v-if="val.src" :src="val.src" alt="">
+        <img v-else :src="addImg" alt="">
+        <span>{{val.desc}}</span>
+      </p>
+    </div>
+    <div class="title3">
+      <p v-for="(val,ind) in listArr" :key="ind" @click="changeJz(val.left)">
+        <span @click="showTypes">{{val.left}} {{val.center}}</span>
+        <span @click="clickRight(val.right)">{{val.right}}</span>
+      </p>
+    </div>
+    <div class="title4">
+      <span>优惠</span>
+      <span>登陆后查看优惠卷</span>
+    </div>
+    <div class="title5">
+      <router-link to="/ccwt">常见问题</router-link>
+    </div>
+    <div class="title6">
+      <button @click="pay">去支付</button>
+    </div>
+    <div class="popup">
+      <van-popup v-model="show" position="bottom">
+        <van-picker
+          show-toolbar
+                    title    = "服务类型"
+                  :columns   = "columns"
+                    @cancel  = "cancelType"
+                    @confirm = "confirmType"
+        />
+      </van-popup>
+      <van-popup v-model="showType">
+        <img src="../assets/licence.png">
+        <span>不同签发城市价格不同,车轮保证全国通用.</span>
+      </van-popup>
+      <van-popup v-model="showCity" position="bottom">
+        <van-picker
+                    title  = "当前签发城市"
+                  :columns = "cityColumns"
+          show-toolbar
+          ref      = "cityPicker"
+          @change  = "cityChange"
+          @cancel  = "cityCancel"
+          @confirm = "cityConfirm"
+        />
+      </van-popup>
+      <van-popup v-model="showCost" position="bottom">
+        <van-picker
+                    title  = "可补换城市"
+                  :columns = "costColumns"
+                    ref    = "costPicker"
+          show-toolbar
+          @change  = "costChange"
+          @cancel  = "costCancel"
+          @confirm = "costConfirm"
+        />
+      </van-popup>
+    </div>
+    <section v-show="showMask" class="mask">
+      <img :src="current.demo">
+      <div>
+        <button @click="upload(1)">拍照</button>
+        <button @click="upload(2)">相册</button>
+        <button @click="cancel">取消</button>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -238,7 +238,89 @@ export default {
     });
   },
   beforeDestroy() {
-    bus.$emit('msg',this.city)
+    bus.$emit("msg", this.city);
   }
 };
 </script>
+<style lang="scss" scoped>
+ul {
+  display        : flex;
+  align-items    : center;
+  justify-content: space-around;
+}
+li {
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  justify-content: center;
+  img {
+    border-radius: 0.15rem;
+    width        : 0.9rem;
+    height       : 0.7rem;
+    border       : 1px solid #c0c0c0;
+  }
+  p {
+    font-size : 0.26rem;
+    padding   : 0.1rem 0.3rem;
+    text-align: center;
+  }
+}
+.add {
+  width  : 0.5rem;
+  height : 0.5rem;
+  padding: 0.1rem 0.2rem;
+}
+.mask {
+  position       : fixed;
+  top            : 0;
+  left           : 0;
+  width          : 100%;
+  height         : 100%;
+  background     : rgba(0, 0, 0, 0.5);
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  justify-content: space-between;
+  img {
+    width     : 90%;
+    margin-top: 20%;
+  }
+  div {
+    display       : flex;
+    width         : 90%;
+    flex-direction: column;
+    align-items   : center;
+    button {
+      width         : 100%;
+      height        : 0.9rem;
+      font-size     : 0.4rem;
+      letter-spacing: 0.1rem;
+      border-radius : 0.15rem;
+      color         : #3aafc0;
+    }
+    button:first-child {
+      border-radius: 0.15rem 0.15rem 0 0;
+    }
+    button:nth-child(2) {
+      border-radius: 0 0 0.15rem 0.15rem;
+    }
+    button:last-child {
+      margin: 0.15rem 0;
+    }
+  }
+}
+
+.van-popup {
+  width        : 100%;
+  border-radius: 30px;
+  text-align   : center;
+  span {
+    font-size: 30px;
+    color    : red;
+  }
+  img {
+    width: 100%;
+  }
+}
+</style>
+

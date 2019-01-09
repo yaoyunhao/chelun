@@ -29,14 +29,17 @@ export let goLogin = () => {
     }
     //唤起支付
 export let goPay = () => {
-    JSBridge.invoke('app', 'pay', {
-        price: 398.00,
-        orderNum: '6486860195682793473',
-        channels: ['weixin', 'alipay', 'baidu'],
-        callbackUrl: 'https://h5/chelun.com/2017/update-licence2/order.html'
-    })
-}
-
+        JSBridge.invoke('app', 'pay', {
+            price: 398.00,
+            orderNum: '6486860195682793473',
+            channels: ['weixin', 'alipay', 'baidu'],
+            callbackUrl: 'https://h5/chelun.com/2017/update-licence2/order.html'
+        })
+    }
+    //唤起分享
+export let share = () => [
+    JSBridge.invoke('ui', 'shareMessage')
+]
 export let uploadImg = (type) => {
     return new Promise((resolve, reject) => {
         JSBridge.invoke('device', 'chooseImage', {
@@ -55,6 +58,10 @@ export let cityList = () => {
 
 // 获取可补换的城市
 export let costList = (...params) => {
-    console.log('params...', params);
-    return sendRequest(`/api/ExchangeJiaZhao/getCostList?order_type=${params[0]}&province_id=${params[1]}&city_id=${params[2]}`)
-}
+        console.log('params...', params);
+        return sendRequest(`/api/ExchangeJiaZhao/getCostList?order_type=${params[0]}&province_id=${params[1]}&city_id=${params[2]}`)
+    }
+    //获取用户是否是会员
+// export let isVip = () => {
+//     return sendRequest('/api2/api/status')
+// }

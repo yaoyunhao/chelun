@@ -23,10 +23,10 @@
             <div class="sectionTop">
                 <ul class="sectionTopUl">
                     <li
-                          v-for  = "(val,ind) in sectionTopUlData"
-                        :key     = "ind"
-                          @click = "changeLi(ind)"
-                        :class   = "sectionTopUlLiInd==ind ? 'liActive' : null"
+                                  v-for  = "(val,ind) in sectionTopUlData"
+                                :key     = "ind"
+                                  @click = "changeLi(ind)"
+                                :class   = "sectionTopUlLiInd==ind ? 'liActive' : null"
                     >{{val}}</li>
                 </ul>
             </div>
@@ -56,10 +56,10 @@
             <div class="m-sectionTop">
                 <ul class="m-sectionTopUl">
                     <li
-                          v-for  = "(val,ind) in sectionTopUlData"
-                        :key     = "ind"
-                          @click = "changeLi(ind)"
-                        :class   = "sectionTopUlLiInd==ind ? 'liActive' : null"
+                                  v-for  = "(val,ind) in sectionTopUlData"
+                                :key     = "ind"
+                                  @click = "changeLi(ind)"
+                                :class   = "sectionTopUlLiInd==ind ? 'liActive' : null"
                     >{{val}}</li>
                 </ul>
             </div>
@@ -82,7 +82,7 @@
             </div>
             <div class="sectionCenterThree" v-if="sectionTopUlLiInd==2">SUV TOP10as33</div>
         </section>
-        <div class="mask" v-show="flag">
+        <div class="maskss" v-show="flag">
             <div class="maskHeader">
                 <img src="../static/img/maskLog.png" alt="" class="logosImg">
                 <img src="../static/img/X.png" alt="" @click="changeFlag('close')">
